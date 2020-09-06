@@ -1,13 +1,14 @@
 class Paper {
 constructor(x,y,r){
+this.image = loadImage("paper.png")
 var options ={
 
-isStatic:false,
-restitution:0.3,
+restitution:0.54,
 friction:10,
-density:0.66
+density:1
 
 }
+
 this.x=x;
 this.y=y;
 this.r=r;
@@ -19,14 +20,18 @@ display(){
       var pos =this.body.position;
       var angle = this.body.angle;
       push();
+      angleMode(RADIANS);
       translate(pos.x, pos.y);
       rotate(angle);
       ellipseMode(CENTER);
       fill("white");
       strokeWeight(4);
-      stroke("black");
+      stroke("white");
       ellipse(0,0,this.r,this.r);
+      imageMode(CENTER);
+      image(this.image,0,0,this.r,this.r);
       pop();
+
     }
 
 }

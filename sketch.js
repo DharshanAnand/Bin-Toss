@@ -4,7 +4,12 @@ const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 
+//var binsheet1;
+function preload(){
 
+  // binsheet1=loadImage("dustbingreen.png");
+   
+}
 
 function setup() {
 	createCanvas(1000, 300);
@@ -20,22 +25,22 @@ function setup() {
 
 	ground = new Ground(600,height,1200,20);
 	paper = new Paper(150,150,40);
-	binsheet1=new Bin(900,280,160,20);
-	binsheet2=new Bin(970,245,20,90);
-	binsheet3=new Bin(810,245,20,90);
+	binsheet1=new Bin(800,100,160,20);
+   binsheetr= new Bin1(890,160,20,100);
+   binsheetl= new Bin1(710,100,20,100); 
 }
 
 
-function draw() {
+function draw() { 
   rectMode(CENTER);
   background("white");
-
+  
 
   ground.display();
   paper.display();
   binsheet1.display();
-  binsheet2.display();
-  binsheet3.display();
+  binsheetr.display();
+  binsheetl.display();
   //keyPressed();
   drawSprites();
 
